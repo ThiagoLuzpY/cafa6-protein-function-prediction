@@ -1,0 +1,10 @@
+torch
+transformers
+pandas
+numpy
+scikit-learn
+biopython
+obonet
+networkx
+tqdm
+pyyaml

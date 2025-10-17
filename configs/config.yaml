@@ -1,0 +1,27 @@
+seed: 42
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  submissions: "submissions"
+  go_obo: "data/raw/go-basic.obo"
+  ia_tsv: "data/raw/IA.tsv"
+  train_fasta: "data/raw/train_sequences.fasta"
+  train_terms: "data/raw/train_terms.tsv"
+  train_taxonomy: "data/raw/train_taxonomy.tsv"
+  test_fasta: "data/raw/testsuperset.fasta"
+model:
+  backbone: "facebook/esm2_t6_8M_UR50D"   # começa leve
+  pooling: "mean"            # mean/max/cls
+  hidden_dim: 512
+  dropout: 0.2
+  threshold: 0.5
+train:
+  batch_size: 16
+  lr: 3e-4
+  epochs: 5
+  fp16: true
+eval:
+  propagate_to_root: true
+  top_k_per_protein: 1500
+submission:
+  sigmoid_clip_min: 1e-5

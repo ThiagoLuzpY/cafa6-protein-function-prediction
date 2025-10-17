@@ -1,0 +1,26 @@
+# ambiente e cache
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.log
+
+# dados grandes e artefatos
+data/raw/
+data/processed/
+data/interim/
+submissions/
+reports/logs/
+reports/figures/
+
+# artefatos grandes
+*.npz
+*.npy
+*.pt
+*.bin
+*.safetensors
+
+# configs sensíveis
+.env
+.kaggle/
