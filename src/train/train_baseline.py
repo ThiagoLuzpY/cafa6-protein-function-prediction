@@ -5,8 +5,10 @@ from pathlib import Path
 import numpy as np
 
 def load_npz_embeddings(npz_path: str) -> np.ndarray:
-    X = np.load(npz_path)["X"].astype("float32")
-    # normaliza para norma-1 (unit length) -> cosseno = produto interno
+    z = np.load(npz_path, allow_pickle=True)
+    # aceita tanto 'X' quanto 'x'
+    key = "X" if "X" in z else "x"
+    X = z[key].astype("float32")
     norms = np.linalg.norm(X, axis=1, keepdims=True) + 1e-12
     return X / norms
 

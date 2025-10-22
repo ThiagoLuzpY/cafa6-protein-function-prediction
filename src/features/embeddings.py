@@ -97,7 +97,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", choices=["train", "test"], required=True)
-    parser.add_argument("--max_proteins", type=int, default=2000, help="subset para rodar em CPU rapidamente")
+    parser.add_argument("--max_proteins", type=int, default=None, help="subset para rodar em CPU rapidamente")
     parser.add_argument("--batch_size", type=int, default=2)
     args = parser.parse_args()
 
